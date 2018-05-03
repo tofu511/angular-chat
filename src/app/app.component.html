@@ -1,20 +1,22 @@
 <div class="page">
   <section class="chat">
     <div class="chat-timeline">
-      <div class="list-group-item list-group-item-action flex-column align-items-start border-0">
-        <div class="media">
-          <div class="media-left">
-            <a href="#" class="icon">竹</a>
-          </div>
-          <div class="media-body">
-            <div class="d-flex w-100 justify-content-between">
-              <h4 class="media-heading">竹井 賢治</h4>
-              <small class="media-date">2017/12/01</small>
+      <ng-container *ngFor="let comment of comments">
+        <div class="list-group-item list-group-item-action flex-column align-items-start border-0">
+          <div class="media">
+            <div class="media-left">
+              <a href="#" class="icon">竹</a>
             </div>
-            <pre>ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。ダミーテキスト。</pre>
+            <div class="media-body">
+              <div class="d-flex w-100 justify-content-between">
+                <h4 class="media-heading">{{ comment.name }}</h4>
+                <small class="media-date">2017/12/01</small>
+              </div>
+              <pre>{{ comment.message }}</pre>
+            </div>
           </div>
         </div>
-      </div>
+      </ng-container>
       <div class="list-group-item list-group-item-action flex-column align-items-start border-0">
         <div class="media">
           <div class="media-body">
