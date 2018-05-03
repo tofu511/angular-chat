@@ -1,7 +1,7 @@
 <div class="page">
   <section class="chat">
     <div class="chat-timeline">
-      <ng-container *ngFor="let comment of comments | async">
+      <ng-container *ngFor="let comment of comments; let i = index">
         <div class="list-group-item list-group-item-action flex-column align-items-start border-0">
           <div class="media">
             <div class="media-left" *ngIf="comment.user.uid !== currentUser.uid">
@@ -9,10 +9,27 @@
             </div>
             <div class="media-body">
               <div class="d-flex w-100 justify-content-between">
-                <h4 class="media-heading">{{ comment.user.name }}</h4>
+                <h4 class="media-heading">{{ comment.user.name }}
+                  <ng-container *ngIf="comment.user.uid === currentUser.uid">
+                    <i class="fa fa-edit ml-2" title="編集" (click)="toggleEditComment(i)"></i>
+                    <i class="fa fa-trash ml-1" title="削除"></i>
+                  </ng-container>
+                </h4>
                 <small class="media-date">{{ comment.date | commentDate }}</small>
               </div>
-              <pre>{{ comment.message }}</pre>
+              <ng-container *ngIf="!comment.isEdit">
+                  <pre>{{ comment.message }}</pre>
+              </ng-container>
+              <ng-container *ngIf="comment.isEdit">
+                  <div class="input-group">
+                    <textarea class="form-control" [(ngModel)]="comment.message" name="edit_comment"></textarea>
+                  </div>
+                  <div class="edit-buttons">
+                    <button class="btn btn-success btn-sm" (click)="saveEditComment(i, comment.key)">保存</button>
+                    <button class="btn btn-warning btn-sm" (click)="toggleEditComment(i)">キャンセル</button>
+                  </div>
+              </ng-container>
+
             </div>
             <div class="media-right" *ngIf="comment.user.uid === currentUser.uid">
                 <a href="#" class="icon">{{ comment.initial }}</a>

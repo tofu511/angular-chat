@@ -72,3 +72,20 @@ section {
 .media-right .icon {
   background-color: #35b8c2;
 }
+
+.media-body h4.media-heading .fa {
+  cursor: pointer;
+}
+
+.media-body h4.media-heading .fa:hover {
+  color: #666;
+}
+
+.media-body div.edit-buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.media-body div.edit-buttons .btn {
+  width: 100px;
+}

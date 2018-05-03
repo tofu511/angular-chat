@@ -6,11 +6,16 @@ export class Comment {
   initial: string;
   message: string;
   date: string;
+  key?: string; // 省略可能なので?が付いている
+  isEdit: boolean;
 
-  constructor(user: User, message: string) {
-    this.user = user;
-    this.initial = user.name.slice(0, 1);
-    this.message = message;
-    this.date = format(new Date()); // Unix timestampに日付を整形
+  constructor(values: any) {
+    this.user = values.user;
+    this.initial = values.initial || values.user.name.slice(0, 1);
+    this.message = values.message;
+    this.date = values.date || format(new Date()); // Unix timestampに日付を整形
+    if (values.key) {
+      this.key = values.key;
+    }
   }
 }
