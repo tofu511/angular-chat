@@ -12,7 +12,7 @@
                 <h4 class="media-heading">{{ comment.user.name }}
                   <ng-container *ngIf="comment.user.uid === currentUser.uid">
                     <i class="fa fa-edit ml-2" title="編集" (click)="toggleEditComment(i)"></i>
-                    <i class="fa fa-trash ml-1" title="削除"></i>
+                    <i class="fa fa-trash ml-1" title="削除" (click)="deleteComment(comment.key)"></i>
                   </ng-container>
                 </h4>
                 <small class="media-date">{{ comment.date | commentDate }}</small>

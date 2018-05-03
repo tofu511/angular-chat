@@ -50,4 +50,8 @@ export class AppComponent {
         this.comments[index].isEdit = false;
       });
   }
+
+  deleteComment(key: string): void {
+    this.commentsRef.remove(key);
+  }
 }
