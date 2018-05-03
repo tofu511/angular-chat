@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Comment } from './class/comment';
 import { User } from './class/user';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 const CURRENT_USER: User = new User(1, '五十嵐洋平');
@@ -23,19 +23,24 @@ const COMMENTS: Comment[] = [
 export class AppComponent {
 
   item: Observable<any>;
-  comments = COMMENTS;
+  // comments = COMMENTS;
+  comments: Observable<any[]>;
+  commentsRef: AngularFireList<any>;
   currentUser = CURRENT_USER;
   content = '';
 
   constructor(private db: AngularFireDatabase) {
     // DBの内容を取得し、変更を監視する
     this.item = db.object('/item').valueChanges();
+    this.commentsRef = db.list('/comments');
+    this.comments = this.commentsRef.valueChanges();
   }
 
   // コメントを最後に追加する
   addComment(comment: string): void {
     if (comment) {
-      this.comments.push(new Comment(this.currentUser, comment));
+      this.commentsRef.push(new Comment(this.currentUser, comment));
+      this.content = ''; // 入力後のテキストエリアを初期化
     }
   }
 }
