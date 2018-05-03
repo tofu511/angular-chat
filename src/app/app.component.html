@@ -20,6 +20,17 @@
           </div>
         </div>
       </ng-container>
+        <div class="media">
+            <div class="media-left">
+              <a href="#" class="icon">{{ (item | async)?.initial }}</a>
+            </div>
+            <div class="media-body">
+              <div class="d-flex w-100 justify-content-between">
+                <h4 class="media-heading">{{ (item | async)?.name }}</h4>
+              </div>
+              <pre>{{ (item | async)?.message }}</pre>
+            </div>
+        </div>
     </div>
   </section>
 
