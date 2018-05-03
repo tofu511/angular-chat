@@ -22,17 +22,15 @@ const COMMENTS: Comment[] = [
 })
 export class AppComponent {
 
-  item: Observable<any>;
-  // comments = COMMENTS;
   comments: Observable<any[]>;
   commentsRef: AngularFireList<any>;
   currentUser = CURRENT_USER;
   content = '';
 
   constructor(private db: AngularFireDatabase) {
-    // DBの内容を取得し、変更を監視する
-    this.item = db.object('/item').valueChanges();
     this.commentsRef = db.list('/comments');
+
+    // DBの内容を取得し、変更を監視する
     this.comments = this.commentsRef.valueChanges();
   }
 
