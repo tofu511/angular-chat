@@ -1,6 +1,6 @@
 <div class="page">
     <div class="container">
-      <form>
+      <form #f="ngForm" (ngSubmit)="login(f)">
         <h2 class="heading text-center">ログイン</h2>
         <div class="form-group">
           <input type="email" ngModel name="email" class="form-control" placeholder="メールアドレスを入力" required autofocus>
