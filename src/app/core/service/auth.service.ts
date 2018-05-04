@@ -23,7 +23,7 @@ export class AuthService {
   create(email: string, password: string): void {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(user => {
-        this.router.navigate(['/']); // Userが作成できたらトップページへ遷移する
+        this.router.navigate(['/users/new']); // Userが作成できたらトップページへ遷移する
       })
       .catch(error => console.error(error));
   }
