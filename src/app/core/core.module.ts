@@ -1,15 +1,21 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
+import { AuthService } from './service/auth.service';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     HeaderComponent
   ],
-  declarations: [HeaderComponent]
+  declarations: [HeaderComponent],
+  providers: [
+    AuthService
+  ]
 })
 // 一度しか読み込まれないモジュール
 export class CoreModule {
