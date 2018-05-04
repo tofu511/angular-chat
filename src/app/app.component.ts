@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <app-header></app-header>
-    <app-chat></app-chat>
+    <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.css']
 })
