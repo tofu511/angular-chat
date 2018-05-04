@@ -12,6 +12,7 @@ import { ChatComponent } from './chat/chat.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     AppComponent,
     ChatComponent,
     NotFoundComponent,
-    SignUpComponent
+    SignUpComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

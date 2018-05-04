@@ -24,7 +24,16 @@ export class AuthService {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(user => {
         this.router.navigate(['/']); // Userが作成できたらトップページへ遷移する
-      });
+      })
+      .catch(error => console.error(error));
+  }
+
+  logout(): void {
+    this.afAuth.auth.signOut()
+      .then(() => {
+        this.router.navigate(['/login']);
+      })
+      .catch(error => console.error(error));
   }
 
 }

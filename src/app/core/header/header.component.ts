@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  login: boolean;
+
+  constructor(private afAuth: AngularFireAuth, private authService: AuthService) { }
 
   ngOnInit() {
+    // ログイン状態を監視する
+    this.afAuth.auth.onAuthStateChanged(user => {
+      if (user) {
+        this.login = true;
+      } else {
+        this.login = false;
+      }
+    });
+  }
+
+  logout(): void {
+    this.authService.logout();
   }
 
 }
