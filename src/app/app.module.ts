@@ -9,12 +9,14 @@ import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { CommentDatePipe } from './pipe/comment-date.pipe';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CommentDatePipe
+    CommentDatePipe,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
