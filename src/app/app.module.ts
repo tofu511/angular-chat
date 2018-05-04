@@ -25,6 +25,7 @@ import { NotFoundComponent } from './error/not-found/not-found.component';
     CoreModule,
     AngularFireModule.initializeApp(environment.firebase), // firebaseの設定を渡す
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AppRoutingModule
   ],
   providers: [],
