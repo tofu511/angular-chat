@@ -4,6 +4,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { ChatComponent } from './chat/chat.component';
 import { TimelineRoutingModule } from './/timeline-routing.module';
+import { UserListComponent } from './user-list/user-list.component';
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import { TimelineRoutingModule } from './/timeline-routing.module';
     TimelineRoutingModule
   ],
   declarations: [
-    ChatComponent
+    ChatComponent,
+    UserListComponent
   ]
 })
 export class TimelineModule { }

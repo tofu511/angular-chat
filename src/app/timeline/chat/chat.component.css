@@ -13,9 +13,9 @@
 
 .page {
   overflow: scroll;
-  max-width: 960px;
+  float: right;
+  width: 75%;
   height: 100%;
-  margin: 0 auto;
   padding: 10px 0;
   background-color: #fff;
   border-left: 1px solid #DDDDDD;
@@ -30,8 +30,7 @@ section {
   display: block;
   position: fixed;
   bottom: 0;
-  width: 100%;
-  max-width: 958px;
+  width: calc(75% - 2px);
   min-height: 100px;
   margin: 0;
   padding: 10px;
