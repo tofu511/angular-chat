@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Comment } from '../class/comment';
-import { User } from '../class/user';
+import { Comment } from '../../class/comment';
+import { User } from '../../class/user';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 
