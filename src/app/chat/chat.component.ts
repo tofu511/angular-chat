@@ -4,9 +4,6 @@ import { User } from '../class/user';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 
-// const CURRENT_USER: User = new User(1, '五十嵐洋平');
-// const ANOTHER_USER: User = new User(2, '竹井賢治');
-
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
