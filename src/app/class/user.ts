@@ -1,9 +1,13 @@
 export class User {
   uid: number;
-  name: string;
+  displayName: string;
+  email: string;
+  photoURL: string;
 
-  constructor(uid: number, name: string) {
-    this.uid = uid;
-    this.name = name;
+  constructor(user) {
+    this.uid = user.uid;
+    this.displayName = user.displayName;
+    this.email = user.email;
+    this.photoURL = user.photoURL;
   }
 }

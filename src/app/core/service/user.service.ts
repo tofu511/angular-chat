@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { User } from '../../class/user';
 
 @Injectable()
 export class UserService {
@@ -14,7 +15,7 @@ export class UserService {
   create(email: string, password: string): void {
     this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(user => {
-        this.db.object(`/users/${user.uid}`).set({ uid: user.uid, email: user.email});
+        this.db.object(`/users/${user.uid}`).set(new User(user));
         this.router.navigate(['/users/new']); // Userが作成できたらトップページへ遷移する
       })
       .catch(error => console.error(error));

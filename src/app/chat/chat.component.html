@@ -9,7 +9,7 @@
               </div>
               <div class="media-body">
                 <div class="d-flex w-100 justify-content-between">
-                  <h4 class="media-heading">{{ comment.user.name }}
+                  <h4 class="media-heading">{{ comment.user.displayName }}
                     <ng-container *ngIf="comment.user.uid === currentUser.uid">
                       <i class="fa fa-edit ml-2" title="編集" (click)="toggleEditComment(i)"></i>
                       <i class="fa fa-trash ml-1" title="削除" (click)="deleteComment(comment.key)"></i>
