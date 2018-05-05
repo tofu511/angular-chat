@@ -15,17 +15,7 @@ export class AuthService {
 
   constructor(
     private router: Router,
-    private afAuth: AngularFireAuth,
-    private db: AngularFireDatabase) {
-
-  }
-
-  create(email: string, password: string): void {
-    this.afAuth.auth.createUserWithEmailAndPassword(email, password)
-      .then(user => {
-        this.router.navigate(['/users/new']); // Userが作成できたらトップページへ遷移する
-      })
-      .catch(error => console.error(error));
+    private afAuth: AngularFireAuth) {
   }
 
   login(email: string, password: string): void {
