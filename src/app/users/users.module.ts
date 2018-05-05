@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { UsersRoutingModule } from './/users-routing.module';
 import { NewUserComponent } from './new-user/new-user.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   imports: [
@@ -10,6 +11,6 @@ import { NewUserComponent } from './new-user/new-user.component';
     FormsModule,
     UsersRoutingModule
   ],
-  declarations: [NewUserComponent]
+  declarations: [NewUserComponent, UserDetailComponent]
 })
 export class UsersModule { }
