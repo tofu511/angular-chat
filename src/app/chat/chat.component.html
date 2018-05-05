@@ -1,4 +1,15 @@
-<div class="page">
+<div *ngIf="!currentUser" class="welcome">
+  <div class="jumbotron jumbotron-fluid p-5 border border-secondary bg-light">
+    <div class="container">
+      <h1 class="display-3">Angular Chat!</h1>
+      <p class="w-100">
+        <a routerLink="/signup">新規登録</a>、または<a routerLink="/login">ログイン</a>して始めましょう！
+      </p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="currentUser" class="page">
     <section class="chat">
       <div class="chat-timeline">
         <ng-container *ngFor="let comment of comments; let i = index">
